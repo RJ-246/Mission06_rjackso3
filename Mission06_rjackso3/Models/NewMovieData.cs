@@ -5,7 +5,7 @@ namespace Mission06_rjackso3.Models
 	{
 		public string Category { get; set; }
 		public string Title { get; set; }
-		public int Year { get; set; }
+		public ushort Year { get; set; }
 		public string Director { get; set; }
 		public string Rating { get; set; }
 		public bool Edited { get; set; }
