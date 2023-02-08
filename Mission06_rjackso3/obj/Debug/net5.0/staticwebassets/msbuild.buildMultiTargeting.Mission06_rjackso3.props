@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/Mission06_rjackso3.props" />
+</Project>

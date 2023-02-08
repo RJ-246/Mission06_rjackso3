@@ -23,6 +23,18 @@ namespace Mission06_rjackso3.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult MyPodcasts()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult MovieData()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

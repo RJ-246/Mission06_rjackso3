@@ -1,4 +1,35 @@
 ﻿<Properties StartupConfiguration="{34A20A7B-E316-40F7-A0E2-2AF2D37EAFF8}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Mission06_rjackso3/Program.cs">
+    <Files>
+      <File FileName="Mission06_rjackso3/Program.cs" Line="9" Column="1" />
+      <File FileName="Mission06_rjackso3/Startup.cs" Line="1" Column="1" />
+      <File FileName="Mission06_rjackso3/Controllers/HomeController.cs" Line="1" Column="1" />
+      <File FileName="Mission06_rjackso3/Views/Home/Index.cshtml" Line="1" Column="1" />
+      <File FileName="Mission06_rjackso3/Views/Shared/_Layout.cshtml" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Mission06_rjackso3" expanded="True">
+            <Node name="Mission06_rjackso3" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+                <Node name="Shared" expanded="True">
+                  <Node name="_Layout.cshtml" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Mission06__rjackso3 FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.Mission06__rjackso3 PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
 </Properties>
