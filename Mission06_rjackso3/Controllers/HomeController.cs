@@ -12,10 +12,12 @@ namespace Mission06_rjackso3.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private MovieContext _movieContext { get; set; }
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, MovieContext movieData)
         {
             _logger = logger;
+            _movieContext = movieData;
         }
 
         public IActionResult Index()
@@ -33,6 +35,21 @@ namespace Mission06_rjackso3.Controllers
         public IActionResult MovieData()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult MovieData(NewMovieData entry)
+        {
+            if (ModelState.IsValid)
+            {
+                _movieContext.Add(entry);
+                _movieContext.SaveChanges();
+                return View("Confirmation");
+            }
+            else
+            {
+                return View();
+            }
         }
 
         public IActionResult Privacy()
