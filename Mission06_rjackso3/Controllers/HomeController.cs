@@ -37,7 +37,7 @@ namespace Mission06_rjackso3.Controllers
         public IActionResult MovieData()
         {
             ViewBag.Categories = _movieContext.Categories.ToList();
-            return View();
+            return View(new NewMovieData());
         }
 
         [HttpPost]
@@ -64,15 +64,43 @@ namespace Mission06_rjackso3.Controllers
             return View(data);
         }
 
-        public IActionResult Edit()
+        [HttpGet]
+        public IActionResult Edit(int id)
         {
             ViewBag.Categories = _movieContext.Categories.ToList();
-            return View("MovieData");
+            var movie = _movieContext.Responses.Single(x => x.MovieID  == id);
+            return View("MovieData", movie);
         }
 
-        public IActionResult Delete()
+        [HttpPost]
+        public IActionResult Edit(NewMovieData movieupd)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                _movieContext.Update(movieupd);
+                _movieContext.SaveChanges();
+                return RedirectToAction("MovieList");
+            }
+            else
+            {
+                ViewBag.Categories = _movieContext.Categories.ToList();
+                return View("MovieData", movieupd);
+            }
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var movie = _movieContext.Responses.Single(x => x.MovieID == id);
+            return View(movie);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(NewMovieData movieDel)
+        {
+            _movieContext.Responses.Remove(movieDel);
+            _movieContext.SaveChanges();
+            return RedirectToAction("MovieList");   
         }
     }
 }

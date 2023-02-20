@@ -7,6 +7,7 @@
 
 <!--Form for entering a new movie-->
 <form method="post">
+    <input hidden asp-for="MovieID" />
     <label asp-for="CategoryID">Category: </label>
     <select asp-for="CategoryID">
         <option value="">Select a Category</option>
@@ -53,7 +54,7 @@
     <input asp-for="Notes" />
     <br /><br />
 
-    <button type="submit">Add Movie</button>
+    <button type="submit">Submit Movie</button>
 
 </form>
 

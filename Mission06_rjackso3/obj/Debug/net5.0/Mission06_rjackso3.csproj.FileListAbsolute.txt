@@ -72,3 +72,4 @@
 /Users/rjackso3/Projects/Mission06_rjackso3/Mission06_rjackso3/bin/Debug/net5.0/runtimes/win-x86/native/e_sqlite3.dll
 /Users/rjackso3/Projects/Mission06_rjackso3/Mission06_rjackso3/obj/Debug/net5.0/Razor/Views/Home/Confirmation.cshtml.g.cs
 /Users/rjackso3/Projects/Mission06_rjackso3/Mission06_rjackso3/obj/Debug/net5.0/Razor/Views/Home/MovieList.cshtml.g.cs
+/Users/rjackso3/Projects/Mission06_rjackso3/Mission06_rjackso3/obj/Debug/net5.0/Razor/Views/Home/Delete.cshtml.g.cs
