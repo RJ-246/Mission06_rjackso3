@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Mission06_rjackso3.Models;
 
@@ -11,12 +12,13 @@ namespace Mission06_rjackso3.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        
         private MovieContext _movieContext { get; set; }
+        
 
-        public HomeController(ILogger<HomeController> logger, MovieContext movieData)
+        public HomeController(MovieContext movieData)
         {
-            _logger = logger;
+        
             _movieContext = movieData;
         }
 
@@ -34,6 +36,7 @@ namespace Mission06_rjackso3.Controllers
         [HttpGet]
         public IActionResult MovieData()
         {
+            ViewBag.Categories = _movieContext.Categories.ToList();
             return View();
         }
 
@@ -52,15 +55,24 @@ namespace Mission06_rjackso3.Controllers
             }
         }
 
-        public IActionResult Privacy()
+        [HttpGet]
+        public IActionResult MovieList()
         {
-            return View();
+            var data = _movieContext.Responses
+                .Include(x => x.category)
+                .ToList();
+            return View(data);
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult Edit()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            ViewBag.Categories = _movieContext.Categories.ToList();
+            return View("MovieData");
+        }
+
+        public IActionResult Delete()
+        {
+            return View();
         }
     }
 }

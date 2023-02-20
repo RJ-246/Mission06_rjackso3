@@ -7,8 +7,14 @@
 
 <!--Form for entering a new movie-->
 <form method="post">
-    <label asp-for="Category">Category: </label>
-    <input asp-for="Category" />
+    <label asp-for="CategoryID">Category: </label>
+    <select asp-for="CategoryID">
+        <option value="">Select a Category</option>
+        @foreach (Category c in ViewBag.Categories)
+            {
+                <option value="@c.CategoryID">@c.CategoryName</option>
+            }
+    </select>
     <br /><br />
 
     <label asp-for="Title">Title: </label>
@@ -25,10 +31,10 @@
 
     <label asp-for="Rating">Rating: </label>
     <select asp-for="Rating">
-        <option value="g">G</option>
-        <option value="pg">PG</option>
-        <option value="pg-13">PG-13</option>
-        <option value="r">R</option>
+        <option value="G">G</option>
+        <option value="PG">PG</option>
+        <option value="PG-13">PG-13</option>
+        <option value="R">R</option>
     </select>
     <br /><br />
 
