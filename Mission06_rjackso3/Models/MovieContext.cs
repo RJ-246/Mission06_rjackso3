@@ -11,12 +11,13 @@ namespace Mission06_rjackso3.Models
 
 		}
 
+        //Creates the needed DBsets
 		public DbSet<NewMovieData> Responses { get; set; }
 		public DbSet<Category> Categories { get; set; }
 
 		protected override void OnModelCreating(ModelBuilder mb)
 		{
-
+            //Seeds the database with data
             mb.Entity<Category>().HasData(
                     new Category
                     {
